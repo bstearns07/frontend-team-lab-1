@@ -52,6 +52,7 @@
 
 body {
   margin: 0;
+  background-image: linear-gradient(180deg, #8fbc8f 0%, #7cfc00 50%, #708090 100%);
 }
 
 #root {

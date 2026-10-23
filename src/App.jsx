@@ -6,13 +6,15 @@ import './App.css'
 
 function App() {
   return (
-    <main>
-      <div className="app">
+      
+      <div className="App">
+        <main>
         <header className="app-header">
-          <p>Hello Vite + React!</p>
+          
         </header>
+        </main>
       </div>
-    </main>
+    
   )
 }
 
