@@ -5,7 +5,7 @@ function Header() {
             Impact Hub
             </h1>
             <nav className="nav-bar">
-                <a href="#">Community Requests</a> &nbsp; /*Community Requests = "Home" */
+                <a href="#">Community Requests</a> &nbsp; 
                 <a href="#">My Availability</a>
             </nav>
             <hr></hr>
@@ -19,4 +19,5 @@ function Header() {
         </header>
     );
 }
+// Community Requests = "Home"
 export default Header;
