@@ -4,9 +4,9 @@ function Header() {
             <h1>
             Impact Hub
             </h1>
-            <p>
+            <h2>
             Help others in your community!
-            </p>
+            </h2>
             <hr></hr>
         </header>
     );
