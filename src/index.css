@@ -92,7 +92,7 @@ h2 {
   @media (max-width: 1024px) {
     font-size: 20px;
   }
-  color: slategray;
+  color: var(--text);
 }
 p {
   margin: 0;
