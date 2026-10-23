@@ -96,7 +96,7 @@ h2 {
 }
 p {
   margin: 0;
-  color: black;
+  color: var(--text);
 }
 hr {
   color: slategray;
