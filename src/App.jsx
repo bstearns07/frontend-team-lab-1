@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import EventControls from "./components/EventControls";
+import VolunteerForm from "./components/VolunteerForm";
 import "./App.css";
 import events from "../public/events.json";
 import { useState } from "react";
@@ -32,6 +33,12 @@ function App() {
 
   return (
     <>
+      <VolunteerForm
+        onAddEvent={() => {}}
+        onUpdateEvent={() => {}}
+        editingEvent={null}
+        onCancelEdit={() => {}}
+      />
       <Header />
       <EventControls
         onAddEvent={() => {}}
