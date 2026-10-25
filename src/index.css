@@ -1,5 +1,5 @@
 :root {
-  --text: #6b6375;
+  --text: #08060d;
   --text-h: #08060d;
   --bg: #fff;
   --border: #e5e4e7;
@@ -11,8 +11,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -32,7 +32,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
+    --text: #08060d;
     --text-h: #f3f4f6;
     --bg: #16171d;
     --border: #2e303a;
@@ -52,7 +52,12 @@
 
 body {
   margin: 0;
-  background-image: linear-gradient(180deg, #8fbc8f 0%, #7cfc00 50%, #708090 100%);
+  background-image: linear-gradient(
+    180deg,
+    #8fbc8f 0%,
+    #7cfc00 50%,
+    #708090 100%
+  );
 }
 
 #root {
@@ -84,6 +89,7 @@ h1 {
   }
   color: black;
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -94,10 +100,12 @@ h2 {
   }
   color: var(--text);
 }
+
 p {
   margin: 0;
   color: var(--text);
 }
+
 hr {
   color: slategray;
   border: none;
@@ -107,17 +115,46 @@ hr {
     margin: 20px 0;
   }
 }
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+
+.event-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  text-align: left;
+  margin: 10px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  text-align: left;
+  margin: 10px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  text-align: left;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
