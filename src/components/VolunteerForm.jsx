@@ -17,10 +17,15 @@ function VolunteerForm({
   editingEvent,
   onCancelEdit,
 }) {
+  // Initialize for state as an empty form unless the user is editing an existing event
   const [form, setForm] = useState(() => editingEvent ?? emptyForm);
+
+  // Track the previous editing event to reset the form if it changes
   const [previousEditingEvent, setPreviousEditingEvent] =
     useState(editingEvent);
 
+  // if the editing event has changed, update the form accordingly
+  // other
   if (editingEvent !== previousEditingEvent) {
     setPreviousEditingEvent(editingEvent);
     setForm(editingEvent ?? emptyForm);
@@ -111,7 +116,7 @@ function VolunteerForm({
         />
         <label htmlFor="category">Category</label>
         <select name="category" value={form.category} onChange={handleChange}>
-          <option value="">All Categories</option>
+          <option value="">Select a category...</option>
           <option value="Community Cleanup">Community Cleanup</option>
           <option value="Food Drive">Food Drive</option>
           <option value="Environmental">Environmental</option>

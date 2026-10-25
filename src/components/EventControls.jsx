@@ -25,7 +25,7 @@ function EventControls({
             type="text"
             value={searchText}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Search by request, organizer, date or other criteria"
+            placeholder="Search by request, organizer, date etc..."
           />
         </div>
         <div className="control">
