@@ -123,7 +123,6 @@ function App() {
 
       <main>
         <EventControls
-          onAddEvent={handleAddEvent}
           searchText={searchText}
           onSearchChange={setSearchText}
           category={category}

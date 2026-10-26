@@ -1,5 +1,4 @@
 function EventControls({
-  onAddEvent,
   searchText,
   onSearchChange,
   category,
