@@ -2,12 +2,12 @@
 :root {
   --text: #08060d;
   --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
+  --bg: #8fbc8f;
+  --border: #708090;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
+  --accent: #7cfc00;
+  --accent-bg: #90EE90 ;
+  --accent-border: #708090 ;
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -114,7 +114,7 @@ button {
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
-  background: #fff;
+  background: var(--bg);
   border-left: 1px solid var(--border);
   text-align: left;
 }
@@ -269,8 +269,9 @@ button {
 }
 
 footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
+  
   /* center within the area left of the 300px sidebar */
   left: calc((100% - 300px) / 2);
   transform: translateX(-50%);
@@ -278,12 +279,17 @@ footer {
   width: min(1126px, calc(100% - 300px));
   box-sizing: border-box;
   text-align: center;
+  margin: 0px;
+  padding: 10px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
 }
 
 /* Additional Media Queries */
-@media (max-width: 800px) {
+@media (max-width: 1126px) {
   footer {
-    position: static;
+    position: -webkit-sticky;
+    position: sticky;
     transform: none;
     width: 100%;
   }
