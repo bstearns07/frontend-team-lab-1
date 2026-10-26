@@ -7,7 +7,10 @@
     "startTime": "09:00 AM",
     "endTime": "12:00 PM",
     "location": "Bressler Park, Wayne, NE",
-    "description": "Join fellow community members to clean up the park, collect litter, and help maintain walking trails and public spaces. Gloves, trash bags, and cleanup supplies will be provided."
+    "description": "Join fellow community members to clean up the park, collect litter, and help maintain walking trails and public spaces. Gloves, trash bags, and cleanup supplies will be provided.",
+    "category": "Community Cleanup",
+    "status": "open",
+    "numVolunteers": 0
   },
   {
     "id": 2,
@@ -17,7 +20,10 @@
     "startTime": "01:00 PM",
     "endTime": "04:00 PM",
     "location": "Community Food Pantry, Wayne, NE",
-    "description": "Help sort donated food items, organize shelves, and prepare food packages for local families in need. Volunteers will work together to ensure donations are organized and ready for distribution."
+    "category": "Food Drive",
+    "description": "Help sort donated food items, organize shelves, and prepare food packages for local families in need. Volunteers will work together to ensure donations are organized and ready for distribution.",
+    "status": "open",
+    "numVolunteers": 0
   },
   {
     "id": 3,
@@ -27,7 +33,10 @@
     "startTime": "10:00 AM",
     "endTime": "01:00 PM",
     "location": "Wayne Community Green Space, Wayne, NE",
-    "description": "Help make our community greener by planting young trees and preparing the surrounding soil. Volunteers will learn basic tree-planting techniques while contributing to a healthier local environment."
+    "category": "Environmental",
+    "description": "Help make our community greener by planting young trees and preparing the surrounding soil. Volunteers will learn basic tree-planting techniques while contributing to a healthier local environment.",
+    "status": "open",
+    "numVolunteers": 0
   },
   {
     "id": 4,
@@ -37,26 +46,87 @@
     "startTime": "02:00 PM",
     "endTime": "04:00 PM",
     "location": "Local Senior Community Center, Wayne, NE",
-    "description": "Spend an afternoon connecting with local seniors through board games, card games, puzzles, and friendly conversation. Volunteers will help set up activities, assist participants, and create a welcoming atmosphere."
+    "category": "Senior Services",
+    "description": "Spend an afternoon connecting with local seniors through board games, card games, puzzles, and friendly conversation. Volunteers will help set up activities, assist participants, and create a welcoming atmosphere.",
+    "status": "open",
+    "numVolunteers": 0
   },
   {
     "id": 5,
     "title": "Community Winter Clothing Drive",
-    "date": "2026-11-21",
+    "date": "2026-08-21",
     "organizer": "Neighbors Helping Neighbors",
     "startTime": "09:00 AM",
     "endTime": "12:00 PM",
     "location": "Wayne Public Community Hall, Wayne, NE",
-    "description": "Help collect, sort, and organize donated coats, hats, gloves, scarves, and other winter clothing for individuals and families in need. Volunteers will prepare clothing donations for distribution before the coldest months arrive."
+    "category": "Clothing Drive",
+    "description": "Help collect, sort, and organize donated coats, hats, gloves, scarves, and other winter clothing for individuals and families in need. Volunteers will prepare clothing donations for distribution before the coldest months arrive.",
+    "status": "closed",
+    "numVolunteers": 0
   },
   {
     "id": 6,
     "title": "Youth STEM Workshop",
-    "date": "2026-11-28",
+    "date": "2026-09-28",
     "organizer": "Future Innovators Community Program",
     "startTime": "01:00 PM",
     "endTime": "04:00 PM",
     "location": "Wayne Public Library, Wayne, NE",
-    "description": "Encourage local students to explore science, technology, engineering, and mathematics through hands-on activities and beginner-friendly coding challenges. Volunteers will assist with activities, answer questions, and help students develop problem-solving skills."
+    "category": "Education",
+    "description": "Encourage local students to explore science, technology, engineering, and mathematics through hands-on activities and beginner-friendly coding challenges. Volunteers will assist with activities, answer questions, and help students develop problem-solving skills.",
+    "status": "closed",
+    "numVolunteers": 0
+  },
+  {
+    "id": 7,
+    "title": "Community Garden Maintenance",
+    "date": "2026-11-21",
+    "organizer": "Green Wayne Initiative",
+    "startTime": "09:00 AM",
+    "endTime": "11:30 AM",
+    "location": "Wayne Community Garden, Wayne, NE",
+    "description": "Help prepare the community garden for winter by removing weeds, clearing garden beds, collecting fallen leaves, and organizing gardening tools. Volunteers will work together to maintain the garden and prepare it for next year's growing season.",
+    "category": "Environmental",
+    "status": "open",
+    "numVolunteers": 0
+  },
+  {
+    "id": 8,
+    "title": "Holiday Food Donation Collection",
+    "date": "2026-11-24",
+    "organizer": "Northeast Nebraska Food Pantry",
+    "startTime": "10:00 AM",
+    "endTime": "02:00 PM",
+    "location": "Community Food Pantry, Wayne, NE",
+    "description": "Assist with collecting nonperishable food donations for local families ahead of the holiday season. Volunteers will help receive donations, organize collection bins, sort food items, and prepare supplies for distribution to community members.",
+    "category": "Food Drive",
+    "status": "open",
+    "numVolunteers": 0
+  },
+  {
+    "id": 9,
+    "title": "Senior Holiday Card Workshop",
+    "date": "2026-12-02",
+    "organizer": "Wayne Area Senior Services",
+    "startTime": "01:00 PM",
+    "endTime": "03:00 PM",
+    "location": "Local Senior Community Center, Wayne, NE",
+    "description": "Help local seniors create personalized holiday cards and seasonal decorations in a relaxed, welcoming environment. Volunteers will assist with craft supplies, share creative ideas, and enjoy conversation while helping participants celebrate the holiday season.",
+    "category": "Senior Services",
+    "status": "open",
+    "numVolunteers": 0
+  },
+  {
+    "id": 10,
+    "title": "Community Park Trail Cleanup",
+    "date": "2026-10-17",
+    "organizer": "Wayne Community Volunteers",
+    "startTime": "08:30 AM",
+    "endTime": "11:30 AM",
+    "location": "Bressler Park, Wayne, NE",
+    "description": "Join community volunteers to remove litter, clear small debris from walking paths, and tidy up shared outdoor spaces. This event is a great opportunity to support local recreation areas and help keep public trails clean and accessible for everyone.",
+    "category": "Community Cleanup",
+    "status": "closed",
+    "numVolunteers": 0
   }
 ]
