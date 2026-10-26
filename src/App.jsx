@@ -6,6 +6,7 @@ import EventList from "./components/EventList";
 import useDbActions from "./hooks/appHelpers";
 import "./App.css";
 import { useState, useRef, useEffect, useMemo } from "react";
+import EventStats from "./components/EventStats";
 
 function App() {
   // Destructure the custom hook to manage database actions and state
@@ -120,8 +121,9 @@ function App() {
   return (
     <>
       <Header />
-
+      <EventStats events={events} />
       <main>
+      
         <EventControls
           searchText={searchText}
           onSearchChange={setSearchText}
