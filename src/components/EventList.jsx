@@ -1,5 +1,23 @@
+import EmptyState from "./EmptyState";
+import EventCard from "./EventCard";
+
 function EventList({ events, onEditEvent, onDeleteEvent }) {
-  // logic to be implemented for rendering the list of events
+  if (events.length === 0) {
+    return <EmptyState />;
+  }
+
+  return (
+    <section className="event-list">
+      {events.map((event) => (
+        <EventCard
+          key={event.id}
+          event={event}
+          onDelete={onDeleteEvent}
+          onEdit={onEditEvent}
+        />
+      ))}
+    </section>
+  );
 }
 
 export default EventList;
