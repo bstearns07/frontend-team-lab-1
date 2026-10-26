@@ -133,6 +133,11 @@ function App() {
           onStatusChange={setStatus}
           searchInputRef={searchInputRef}
           onCancelEdit={handleCancelEdit}
+          onClearFilters={() => {
+            setSearchText("");
+            setCategory("");
+            setStatus("");
+          }}
         />
         <VolunteerForm
           onAddEvent={handleAddEvent}

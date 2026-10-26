@@ -5,6 +5,7 @@ function EventControls({
   onCategoryChange,
   status,
   onStatusChange,
+  onClearFilters,
 }) {
   return (
     <div className="event-controls">
@@ -13,6 +14,7 @@ function EventControls({
           <h2>Find a Way to Help</h2>
           <p>Browse local requests and choose one that fits your time.</p>
         </div>
+        <button onClick={onClearFilters}>Clear Filters</button>
       </div>
 
       <div className="filters">
