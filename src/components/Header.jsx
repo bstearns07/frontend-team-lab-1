@@ -4,6 +4,7 @@ function Header() {
             <h1>
             Impact Hub
             </h1>
+            
             <nav className="nav-bar">
                 <a href="#">Community Requests</a> &nbsp; 
                 <a href="#">My Availability</a>
