@@ -19,7 +19,7 @@ function EventCard({ event, onDelete, onEdit }) {
         <strong>Date:</strong> {event.date}
       </p>
       <p>
-        <strong>Time:</strong> {event.time}
+        <strong>Time:</strong> {event.startTime} - {event.endTime}
       </p>
       <p>{event.description}</p>
       <button onClick={handleClick}>View Details</button>
