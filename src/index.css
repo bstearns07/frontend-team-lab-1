@@ -271,12 +271,10 @@ button {
 footer {
   position: sticky;
   bottom: 0;
-  
   /* center within the area left of the 300px sidebar */
   left: calc((100% - 300px) / 2);
-  transform: translateX(-50%);
   /* ensure the footer is centered within the remaining space next to the sidebar */
-  width: min(1126px, calc(100% - 300px));
+  width: 70rem calc(100% - 300px);
   box-sizing: border-box;
   text-align: center;
   margin: 0px;
@@ -288,7 +286,6 @@ footer {
 /* Additional Media Queries */
 @media (max-width: 1126px) {
   footer {
-    position: -webkit-sticky;
     position: sticky;
     transform: none;
     width: 100%;
