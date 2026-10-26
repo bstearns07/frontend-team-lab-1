@@ -173,8 +173,36 @@ button {
   }
 }
 
-/* Event Controls Styles */
+/* Event Stats Styles */
+.openEvents {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px 160px;
+  gap: 16px;
+  align-items: end;
+  text-align: left;
+  border: 1px solid var(--border);
+  padding: 16px;
+}
+.totalEvents {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px 160px;
+  gap: 16px;
+  align-items: end;
+  text-align: left;
+  border: 1px solid var(--border);
+  padding: 16px;
+}
+.urgentEvents {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px 160px;
+  gap: 16px;
+  align-items: end;
+  text-align: left;
+  border: 1px solid var(--border);
+  padding: 16px;
+}
 
+/* Event Controls Styles */
 .event-controls {
   display: flex;
   flex-direction: column;
