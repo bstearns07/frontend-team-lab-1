@@ -1,3 +1,4 @@
+/* Root Variables */
 :root {
   --text: #08060d;
   --text-h: #08060d;
@@ -26,6 +27,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global Styles */
 body {
   margin: 0;
   margin-right: 300px;
@@ -101,6 +103,8 @@ button {
   cursor: pointer;
 }
 
+/* Volunteer Form Styles */
+
 .volunteer-form {
   position: fixed;
   top: 0;
@@ -163,6 +167,8 @@ button {
     border-radius: 8px;
   }
 }
+
+/* Event Controls Styles */
 
 .event-controls {
   display: flex;
@@ -228,11 +234,14 @@ button {
   gap: 4px;
 }
 
+/* Event List Styles */
 .event-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
 }
+
+/* Event Card Styles */
 
 .event-card {
   background: white;
@@ -264,11 +273,13 @@ footer {
   /* center within the area left of the 300px sidebar */
   left: calc((100% - 300px) / 2);
   transform: translateX(-50%);
+  /* ensure the footer is centered within the remaining space next to the sidebar */
   width: min(1126px, calc(100% - 300px));
   box-sizing: border-box;
   text-align: center;
 }
 
+/* Additional Media Queries */
 @media (max-width: 800px) {
   footer {
     position: static;
