@@ -1,5 +1,9 @@
 import { useEffect, useCallback, useState } from "react";
 
+/**
+ * Hook to manage database actions for volunteer events.
+ * @returns {Object} An object containing the events array, loading state, error message, and CRUD functions for events.
+ */
 function useDbActions() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,7 +25,7 @@ function useDbActions() {
           throw new Error("Failed to load Volunteer Events");
         }
 
-        // Parse the JSON response and update the events state
+        // Parse the JSON response and update the events state with the loaded events
         const data = await response.json();
         setEvents(data);
       } catch (err) {
@@ -30,15 +34,17 @@ function useDbActions() {
         setLoading(false);
       }
     }
+    // Call the function to load events
     loadEvents();
   }, []); // Empty dependency array ensures this runs only once on mount
 
   // Create a new event and add it to the events state
   const createEvent = useCallback((newEvent) => {
+    // define the new volunteer event object to be added by spreading the its properties into a new object
     const eventToAdd = {
       ...newEvent,
     };
-
+    // add the new event to the current list of events
     setEvents((currentEvents) => [...currentEvents, eventToAdd]);
   }, []);
 
@@ -46,6 +52,8 @@ function useDbActions() {
   const updateEvent = useCallback((updatedEvent) => {
     setEvents((currentEvents) =>
       currentEvents.map((event) =>
+        // if the event ID matches the updated event's ID, merge the updates into the event object
+        // otherwise, keep the event as is
         event.id === updatedEvent.id ? { ...event, ...updatedEvent } : event,
       ),
     );

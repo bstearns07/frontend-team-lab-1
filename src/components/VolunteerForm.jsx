@@ -17,25 +17,36 @@ function VolunteerForm({
   editingEvent,
   onCancelEdit,
 }) {
-  // Initialize for state as an empty form unless the user is editing an existing event
+  // Initialize for state as an empty form or with the info of the event the user is trying to edit
   const [form, setForm] = useState(() => editingEvent ?? emptyForm);
-
-  // Track the previous editing event to reset the form if it changes
+  // Track the previous editing event to reset form state if it changes
   const [previousEditingEvent, setPreviousEditingEvent] =
     useState(editingEvent);
 
-  // if the editing event has changed, update the form accordingly
-  // other
+  // if the user is making changes to the editing event, update the form with their changes
+  // then update the form with the new editing event if it's changed to a different event
   if (editingEvent !== previousEditingEvent) {
     setPreviousEditingEvent(editingEvent);
     setForm(editingEvent ?? emptyForm);
   }
 
+  /**
+    Handles changes to the form input fields and updates the form state accordingly.
+    @param {Object} e - The event object from the input change event.
+    @returns {void}
+  */
   const handleChange = (e) => {
+    // Destructure the name and value from the input event
+    // Update the form state with the new value for the corresponding target element
     const { name, value } = e.target;
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
 
+  /**
+   * Handles the form submission for adding/updating a volunteer event.
+   * @param {Object} e - The event object from the form submit event.
+   * @returns {void}
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -54,6 +65,7 @@ function VolunteerForm({
       return;
     }
 
+    // If editing an existing event call the update callback, otherwise call the add callback. Then reset the form to empty
     if (editingEvent) {
       onUpdateEvent(form);
     } else {
@@ -62,6 +74,12 @@ function VolunteerForm({
     setForm(emptyForm);
   };
 
+  /**
+   * Handles cancellation of editing a volunteer event
+   *
+   * Resets the form to empty and invokes the onCancelEdit callback.
+   * @returns {void}
+   */
   const handleCancel = () => {
     setForm(emptyForm);
     onCancelEdit();

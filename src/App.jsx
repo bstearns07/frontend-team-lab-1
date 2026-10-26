@@ -8,23 +8,31 @@ import "./App.css";
 import { useState, useRef, useEffect, useMemo } from "react";
 
 function App() {
+  // Destructure the custom hook to manage database actions and state
   const { events, loading, error, createEvent, updateEvent, deleteEvent } =
     useDbActions();
+  // Initialize state for search, category, status, and editing event
   const [searchText, setSearchText] = useState("");
   const [category, setCategory] = useState("");
   const [status, setStatus] = useState("");
   const [editingEvent, setEditingEvent] = useState(null);
-  const searchInputRef = useRef(null); // the reference to the search input element
+  // Reference to the search input element for focusing the input when the component mounts
+  const searchInputRef = useRef(null);
 
   // Focus the search input when the component mounts
   useEffect(() => {
     searchInputRef.current?.focus();
   }, []);
 
+  // define filtered events using useMemo to so it only recalculates when dependencies change
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
+      // Convert the search text to lowercase and trim whitespace for comparison
       const userQuery = searchText.trim().toLowerCase();
+      // Check if the event matches the search query in any of the relevant fields
       const matchesSearch =
+        // if the user didn't enter a search query, matchesSearch will be true for all events
+        // otherwise, check if any of the relevant fields contain the search query
         !userQuery ||
         [
           event.title,
@@ -35,6 +43,9 @@ function App() {
           event.location,
         ].some((value) => value.toLowerCase().includes(userQuery));
 
+      // return whether a match was found
+      // if no category or status filter is selected, all events will match those criteria
+      // otherwise only events matching filters being used will be included
       return (
         matchesSearch &&
         (!category || event.category === category) &&
@@ -43,15 +54,27 @@ function App() {
     });
   }, [events, searchText, category, status]);
 
+  /**
+   * Handles adding a new event.
+   * @param {*} event - The event object to be added.
+   */
   const handleAddEvent = (event) => {
     createEvent(event);
   };
 
+  /**
+   * Handles updating an existing event.
+   * @param {*} event - The event object with updated information.
+   */
   const handleUpdateEvent = (event) => {
     updateEvent(event);
     setEditingEvent(null);
   };
 
+  /**
+   * Handles deleting an event.
+   * @param {*} id - The ID of the event to be deleted.
+   */
   function handleDeleteEvent(id) {
     const shouldDelete = window.confirm(
       "Are you sure you want to delete this event?",
@@ -63,11 +86,16 @@ function App() {
 
     deleteEvent(id);
 
+    // If the deleted event was being edited, reset the editing state
     if (editingEvent && editingEvent.id === id) {
       setEditingEvent(null);
     }
   }
 
+  /**
+   * Handles cancellation of editing an event by resetting the editing state.
+   * @returns {void}
+   */
   function handleCancelEdit() {
     setEditingEvent(null);
   }
