@@ -1,2 +1,242 @@
-/*Colors: DarkSeaGreen, LawnGreen (LightGreen alternate), SlateGrey, Black */
-/*        #8fbc8f       #7cfc00    #90EE90                #708090       #000000  */
+/* Volunteer Form Styles */
+
+.volunteer-form {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-image: linear-gradient(180deg, #6dac7a, #90ee90, #7cfc00);
+  border-left: 1px solid var(--border);
+  text-align: left;
+}
+
+.volunteer-form h2 {
+  text-align: center;
+}
+
+.volunteer-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.volunteer-form label {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.volunteer-form input,
+.volunteer-form select,
+.volunteer-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+
+.volunteer-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.volunteer-form button {
+  align-self: center;
+  width: auto;
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  body {
+    margin-right: 0;
+  }
+
+  .volunteer-form {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 24px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+}
+
+/* Event Stats Styles */
+.event-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 16px;
+}
+
+.stat-card {
+  min-width: 0;
+  padding: 16px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card p {
+  margin: 0;
+}
+
+.stat-label,
+.stat-description {
+  color: #53616b;
+  font-size: 12px;
+}
+
+.stat-value {
+  margin: 4px 0 2px !important;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+@media (max-width: 700px) {
+  .event-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Event Controls Styles */
+.event-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0;
+  padding: 0 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  text-align: left;
+  margin: 10px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px 160px;
+  gap: 16px;
+  align-items: end;
+  text-align: left;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.control input,
+.control select {
+  width: 100%;
+  height: 40px;
+}
+
+.controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+.controls-header h2,
+.controls-header p {
+  margin: 0;
+}
+
+.controls-header p {
+  font-size: 15px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Event List Styles */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 10px;
+}
+
+/* Event Card Styles */
+
+.event-card {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.event-card h3 {
+  margin-top: 0;
+}
+
+.event-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+@media (max-width: 700px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+}
+
+header {
+  position: static;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  padding: 10px;
+  text-align: center;
+}
+footer {
+  position: sticky;
+  bottom: 0;
+  /* center within the area left of the 300px sidebar */
+  left: calc((100% - 300px) / 2);
+  /* ensure the footer is centered within the remaining space next to the sidebar */
+  width: 70rem calc(100% - 300px);
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0px;
+  padding: 10px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  opacity: 0.8;
+}
+
+a {
+  color: var(--border);
+  text-decoration: underline;
+}
+
+/* Additional Media Queries */
+@media (max-width: 1126px) {
+  footer {
+    position: sticky;
+    transform: none;
+    width: 100%;
+  }
+}
