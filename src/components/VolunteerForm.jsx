@@ -148,6 +148,7 @@ function VolunteerForm({
           value={form.description}
           onChange={handleChange}
           placeholder="Description"
+          id="form-description"
         />
         <button type="submit">{editingEvent ? "Update" : "Add"} Event</button>
         {editingEvent && (

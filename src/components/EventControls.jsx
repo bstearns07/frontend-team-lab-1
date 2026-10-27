@@ -54,6 +54,7 @@ function EventControls({
             <option value="">All Statuses</option>
             <option value="open">Open</option>
             <option value="closed">Closed</option>
+            <option value="urgent">Urgent</option>
           </select>
         </div>
       </div>

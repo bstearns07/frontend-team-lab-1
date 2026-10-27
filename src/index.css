@@ -51,6 +51,16 @@ body {
   min-height: 100svh;
 }
 
+header {
+  position: static;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  padding: 10px;
+  text-align: center;
+}
+
 h1,
 h2 {
   font-family: var(--heading);
@@ -95,10 +105,40 @@ textarea {
 }
 
 button {
-  background-color: var(--accent);
+  background-image: linear-gradient(to right, #7cfc00, #90ee90);
   border: 1px solid var(--accent-border);
   padding: 8px 16px;
   border-radius: 4px;
   color: var(--text);
   cursor: pointer;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  /* center within the area left of the 300px sidebar */
+  left: calc((100% - 300px) / 2);
+  /* ensure the footer is centered within the remaining space next to the sidebar */
+  width: 70rem calc(100% - 300px);
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0px;
+  padding: 10px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  opacity: 0.8;
+}
+
+a {
+  color: var(--border);
+  text-decoration: underline;
+}
+
+/* Additional Media Queries */
+@media (max-width: 1126px) {
+  footer {
+    position: sticky;
+    transform: none;
+    width: 100%;
+  }
 }
