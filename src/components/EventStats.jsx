@@ -1,13 +1,13 @@
 function EventStats({ events }) {
-    const openEvents = events.length;
-    const totalEvents = events.filter((event) => event.status === "upcoming").length;
-    const urgentEvents = events.filter((event) => event.status === "past").length;
+    const overallEvents = events.length;
+    const totalEvents = events.reduce((total, event) => total + (event.numVolunteers ? event.numVolunteers : 0), 0);
+    const urgentEvents = events.filter((event) => event.status === "urgent").length;
 
     return (
         <div className="event-stats">
             <div className="stat-card">
-                <p className="stat-label">Open requests</p>
-                <p className="stat-value">{openEvents}</p>
+                <p className="stat-label">Overall requests</p>
+                <p className="stat-value">{overallEvents}</p>
                 <p className="stat-description">Neighbors looking for support</p>
             </div>
             <div className="stat-card">

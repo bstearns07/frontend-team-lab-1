@@ -9,7 +9,7 @@ function Header() {
        
 
       <h2>A little Help. A Stronger Community.</h2>
-      <p>
+      <p id="header-p">
         Ask for support, find a local request, and give your time where it
         matters.
       </p>
