@@ -294,12 +294,12 @@
 
 /* Pagination Styles */
 
-#page-navigation-section {
+.pagination {
   display: flex;
   justify-content: center;
   margin: 16px;
-  gap: 8px;
-  margin: 16px;
+  gap: 3px;
+  margin: 2px;
 }
 
 .page-button {
