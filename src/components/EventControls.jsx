@@ -6,6 +6,7 @@ function EventControls({
   status,
   onStatusChange,
   onClearFilters,
+  searchInputRef,
 }) {
   return (
     <div className="event-controls">
@@ -21,6 +22,7 @@ function EventControls({
         <div className="control">
           <label htmlFor="search">Search requests</label>
           <input
+            ref={searchInputRef}
             id="search"
             type="text"
             value={searchText}

@@ -7,23 +7,28 @@ import useDbActions from "./hooks/appHelpers";
 import "./App.css";
 import { useState, useRef, useEffect, useMemo } from "react";
 import EventStats from "./components/EventStats";
+import Pagination from "./components/Pagination";
 
 function App() {
   // Destructure the custom hook to manage database actions and state
   const { events, loading, error, createEvent, updateEvent, deleteEvent } =
     useDbActions();
-  // Initialize state for search, category, status, and editing event
+
+  // Initialize state App state
   const [searchText, setSearchText] = useState("");
   const [category, setCategory] = useState("");
   const [status, setStatus] = useState("");
   const [editingEvent, setEditingEvent] = useState(null);
-  // Reference to the search input element for focusing the input when the component mounts
   const searchInputRef = useRef(null);
 
   // Focus the search input when the component mounts
+  // to prevent focusing before the search input exists, check if loading is false before focusing
+  // then rerun the effect when loading changes
   useEffect(() => {
-    searchInputRef.current?.focus();
-  }, []);
+    if (!loading) {
+      searchInputRef.current?.focus();
+    }
+  }, [loading]);
 
   // define filtered events using useMemo to so it only recalculates when dependencies change
   const filteredEvents = useMemo(() => {
@@ -54,6 +59,24 @@ function App() {
       );
     });
   }, [events, searchText, category, status]);
+
+  // pagination state
+  const EVENTS_PER_PAGE = 4;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredEvents.length / EVENTS_PER_PAGE),
+  );
+  const safePage = Math.min(currentPage, totalPages); // used so deleting the last card on the last page doesn't leave an empty page
+
+  /**
+   * Defines the events to be displayed on the current page based on pagination.
+   */
+  const paginatedEvents = useMemo(() => {
+    // To skip over the events from previous pages, calculate the index to start on based on the current page
+    const startIndex = (safePage - 1) * EVENTS_PER_PAGE;
+    return filteredEvents.slice(startIndex, startIndex + EVENTS_PER_PAGE);
+  }, [filteredEvents, safePage]);
 
   /**
    * Handles adding a new event.
@@ -123,22 +146,44 @@ function App() {
       <Header />
       <EventStats events={events} />
       <main>
-      
         <EventControls
           searchText={searchText}
-          onSearchChange={setSearchText}
+          onSearchChange={(value) => {
+            setSearchText(value);
+            setCurrentPage(1);
+          }}
           category={category}
-          onCategoryChange={setCategory}
+          onCategoryChange={(value) => {
+            setCategory(value);
+            setCurrentPage(1);
+          }}
           status={status}
-          onStatusChange={setStatus}
+          onStatusChange={(value) => {
+            setStatus(value);
+            setCurrentPage(1);
+          }}
           searchInputRef={searchInputRef}
           onCancelEdit={handleCancelEdit}
           onClearFilters={() => {
             setSearchText("");
             setCategory("");
             setStatus("");
+            setCurrentPage(1);
           }}
         />
+
+        <EventList
+          events={paginatedEvents}
+          onEditEvent={setEditingEvent}
+          onDeleteEvent={handleDeleteEvent}
+        />
+
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
+
         <VolunteerForm
           onAddEvent={handleAddEvent}
           onUpdateEvent={handleUpdateEvent}
@@ -146,11 +191,6 @@ function App() {
           onCancelEdit={() => setEditingEvent(null)}
         />
 
-        <EventList
-          events={filteredEvents}
-          onEditEvent={setEditingEvent}
-          onDeleteEvent={handleDeleteEvent}
-        />
         <Footer />
       </main>
     </>

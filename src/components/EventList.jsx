@@ -7,16 +7,18 @@ function EventList({ events, onEditEvent, onDeleteEvent }) {
   }
 
   return (
-    <section className="event-list">
-      {events.map((event) => (
-        <EventCard
-          key={event.id}
-          event={event}
-          onDelete={onDeleteEvent}
-          onEdit={onEditEvent}
-        />
-      ))}
-    </section>
+    <div className="container">
+      <section className="event-list">
+        {events.map((event) => (
+          <EventCard
+            key={event.id}
+            event={event}
+            onDelete={onDeleteEvent}
+            onEdit={onEditEvent}
+          />
+        ))}
+      </section>
+    </div>
   );
 }
 

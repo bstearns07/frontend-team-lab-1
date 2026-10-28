@@ -58,7 +58,7 @@
   }
 
   .volunteer-form {
-    position: static;
+    position: static; /* override fixed positioning for small screens */
     width: auto;
     height: auto;
     margin: 24px 16px;
@@ -174,10 +174,20 @@
 
 /* Event List Styles */
 .event-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  flex-wrap: wrap; /* keeps lone wolf or odd numbered last cards nice and centered */
+  display: flex;
+  justify-content: center;
   gap: 1rem;
+  width: 100%;
+  max-width: calc(
+    2 * 390px + 1rem
+  ); /* allows for two 390px cards plus gap, so rows hold 2 cards max */
   margin: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
 }
 
 /* Event Card Styles */
@@ -189,7 +199,9 @@
   padding: 1.25rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  max-width: 350px;
+  box-sizing: border-box;
+  flex: 0 1 calc(50% - 0.5rem);
+  max-width: 390px;
 }
 
 .event-card p {
@@ -214,7 +226,7 @@
   color: #333333;
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   width: 3rem;
 }
@@ -269,6 +281,37 @@
   background-image: linear-gradient(to right, #4facfe, #00f2fe);
   border: none;
   color: #fff;
+}
+
+/* Pagination Styles */
+
+#page-navigation-section {
+  display: flex;
+  justify-content: center;
+  margin: 16px;
+  gap: 8px;
+  margin: 16px;
+}
+
+.page-button {
+  min-height: 36px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pagination .page-button.active {
+  background: #8fbc8f;
+  font-weight: 700;
+}
+
+.pagination button:disabled {
+  background: #eef2ef;
+  color: #6b7780;
+  cursor: not-allowed;
 }
 
 @media (max-width: 700px) {
