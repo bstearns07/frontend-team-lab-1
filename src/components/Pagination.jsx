@@ -6,7 +6,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
   }
 
   return (
-    <nav class="pagination">
+    <nav className="pagination">
       <button
         className="page-button"
         onClick={() => onPageChange(currentPage - 1)}

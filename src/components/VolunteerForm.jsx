@@ -9,6 +9,7 @@ const emptyForm = {
   location: "",
   category: "",
   description: "",
+  status: "open",
 };
 
 function VolunteerForm({
@@ -150,6 +151,7 @@ function VolunteerForm({
           placeholder="Description"
           id="form-description"
         />
+
         <button type="submit">{editingEvent ? "Update" : "Add"} Event</button>
         {editingEvent && (
           <button type="button" onClick={handleCancel}>

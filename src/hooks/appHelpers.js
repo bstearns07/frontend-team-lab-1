@@ -40,12 +40,13 @@ function useDbActions() {
 
   // Create a new event and add it to the events state
   const createEvent = useCallback((newEvent) => {
-    // define the new volunteer event object to be added by spreading the its properties into a new object
-    const eventToAdd = {
-      ...newEvent,
-    };
-    // add the new event to the current list of events
-    setEvents((currentEvents) => [...currentEvents, eventToAdd]);
+    setEvents((currentEvents) => {
+      // the form doesn't supply an id, so use the next number after the highest existing one
+      const nextId = Math.max(0, ...currentEvents.map((event) => event.id)) + 1;
+      // default to "open" so every card has a status to display
+      const eventToAdd = { ...newEvent, id: nextId, status: newEvent.status ?? "open" };
+      return [...currentEvents, eventToAdd];
+    });
   }, []);
 
   // update an existing event
