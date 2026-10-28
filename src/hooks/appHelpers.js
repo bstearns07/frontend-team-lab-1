@@ -44,7 +44,11 @@ function useDbActions() {
       // the form doesn't supply an id, so use the next number after the highest existing one
       const nextId = Math.max(0, ...currentEvents.map((event) => event.id)) + 1;
       // default to "open" so every card has a status to display
-      const eventToAdd = { ...newEvent, id: nextId, status: newEvent.status ?? "open" };
+      const eventToAdd = {
+        ...newEvent,
+        id: nextId,
+        status: newEvent.status ?? "open",
+      };
       return [...currentEvents, eventToAdd];
     });
   }, []);
@@ -67,7 +71,26 @@ function useDbActions() {
     );
   }, []);
 
-  return { events, loading, error, createEvent, updateEvent, deleteEvent };
+  // handle someone volunteering for an event by incrementing the volunteer count
+  const volunteerForEvent = useCallback((eventId) => {
+    setEvents((currentEvents) =>
+      currentEvents.map((event) =>
+        event.id === eventId
+          ? { ...event, numVolunteers: (event.numVolunteers ?? 0) + 1 }
+          : event,
+      ),
+    );
+  }, []);
+
+  return {
+    events,
+    loading,
+    error,
+    createEvent,
+    updateEvent,
+    deleteEvent,
+    volunteerForEvent,
+  };
 }
 
 export default useDbActions;
