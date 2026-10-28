@@ -1,4 +1,4 @@
-function EventCard({ event, onDelete, onEdit }) {
+function EventCard({ event, onDelete, onEdit, onAddVolunteer }) {
   function handleClick() {
     alert(
       `${event.title}
@@ -26,6 +26,9 @@ function EventCard({ event, onDelete, onEdit }) {
       <p>
         <strong>Time:</strong> {event.startTime} - {event.endTime}
       </p>
+      <p>
+        <strong>Volunteers Committed:</strong> {event.numVolunteers}
+      </p>
       <p>{event.description}</p>
       <div className="card-actions">
         <div className="details-row">
@@ -41,7 +44,7 @@ function EventCard({ event, onDelete, onEdit }) {
           <button
             type="button"
             className="volunteer-button"
-            onClick={handleClick}
+            onClick={() => onAddVolunteer(event.id)}
           >
             Volunteer
           </button>

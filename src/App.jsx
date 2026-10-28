@@ -11,7 +11,7 @@ import Pagination from "./components/Pagination";
 
 function App() {
   // Destructure the custom hook to manage database actions and state
-  const { events, loading, error, createEvent, updateEvent, deleteEvent } =
+  const { events, loading, error, createEvent, updateEvent, deleteEvent, volunteerForEvent } =
     useDbActions();
 
   // Initialize state App state
@@ -176,6 +176,7 @@ function App() {
           events={paginatedEvents}
           onEditEvent={setEditingEvent}
           onDeleteEvent={handleDeleteEvent}
+          onAddVolunteer={volunteerForEvent}
         />
 
         <Pagination
