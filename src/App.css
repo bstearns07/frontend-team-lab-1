@@ -1,6 +1,42 @@
 /* Header Styles */
+
+.site-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+}
+
+.site-header-content img {
+  flex: 0 0 auto;
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header-text {
+  min-width: 0;
+  text-align: center;
+}
+
 #header-p {
   margin: 3px;
+}
+
+@media (max-width: 600px) {
+  .site-header-content img {
+    width: clamp(64px, 18vw, 100px);
+  }
+
+  .site-header h1 {
+    font-size: clamp(32px, 8vw, 48px);
+    margin: 20px 0;
+  }
+
+  .site-header h2 {
+    font-size: clamp(16px, 4vw, 22px);
+  }
 }
 
 /* Volunteer Form Styles */
@@ -322,8 +358,8 @@
   font-weight: 700;
 }
 
-  img {
-    float: left;
+img {
+  float: left;
 }
 .pagination button:disabled {
   background: #eef2ef;
