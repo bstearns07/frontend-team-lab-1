@@ -1,12 +1,12 @@
 function Header() {
   return (
     <header className="site-header">
+       <img src="src/assets/ImpactHubLogo.png" alt="Impact Hub Logo" />
+      
       <h1>Impact Hub</h1>
 
-      <nav className="nav-bar">
-        <a href="#">Community Requests</a> &nbsp;
-        <a href="#">My Availability</a>
-      </nav>
+
+       
 
       <h2>A little Help. A Stronger Community.</h2>
       <p>

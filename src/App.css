@@ -317,6 +317,9 @@
   font-weight: 700;
 }
 
+  img {
+    float: left;
+}
 .pagination button:disabled {
   background: #eef2ef;
   color: #6b7780;
