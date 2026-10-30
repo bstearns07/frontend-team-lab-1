@@ -61,7 +61,7 @@ header {
     margin: 32px 0;
     color: var(--text);
   }
- 
+
   position: static;
   top: 0;
   z-index: 1000;
@@ -130,12 +130,11 @@ footer {
   /* center within the area left of the 300px sidebar */
   left: calc((100% - 300px) / 2);
   /* ensure the footer is centered within the remaining space next to the sidebar */
-  width: 70rem calc(100% - 300px);
   box-sizing: border-box;
   text-align: center;
   margin: 0px;
   margin-top: 10px;
-  padding: 10px;
+  padding: 16px;
   background: var(--accent-bg);
   border: 1px solid var(--accent-border);
   opacity: 0.8;
