@@ -37,8 +37,7 @@ and page through them with a clean card-based layout.
 
 Built as a team project for the Full Stack Development course at Wayne State College.
 
-For additional project documents, see the [Team Lab document](./docs/ReactCodeTeamLab.docx) and the
-[Component Hierarchy Diagram](./docs/ComponentHierarchDiagram.vsdx).
+For additional project documents, see the [Team Lab document](./docs/ReactCodeTeamLab.pdf) and the
 
 ---
 
