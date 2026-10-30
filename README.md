@@ -1,4 +1,5 @@
 # 🤝 Impact Hub
+
 ![React](https://img.shields.io/badge/React-19-61dafb)
 ![Vite](https://img.shields.io/badge/Vite-8-646cff)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
@@ -7,6 +8,7 @@
 ---
 
 ## 👥 Team Members
+
 - Ben Stearns - [@bstearns07](https://github.com/bstearns07)
 - Taylor Rath
 - Tyler Lucas
@@ -17,6 +19,7 @@
 ---
 
 ## 📑 Table of Contents
+
 - 📌 [Summary](#-summary)
 - ⭐ [How It Works](#-how-it-works)
 - 🛠 [Installation](#-installation)
@@ -37,24 +40,28 @@ and page through them with a clean card-based layout.
 
 Built as a team project for the Full Stack Development course at Wayne State College.
 
-For additional project documents, see the [Team Lab document](./docs/ReactCodeTeamLab.pdf) and the
+For additional project documents, see the [Team Lab document](./docs/ReactCodeTeamLab_Documentation.pdf) and the
 
 ---
 
 ## ⭐ How It Works
+
 Follow the steps below once the app is running.
 
 ### 🔎 Find a Request
+
 1. Type in the **Search requests** box to filter by title, organizer, date, category, status, or location.
 2. Use the **Category** and **Status** dropdowns to narrow the list further.
 3. Click **Clear Filters** to reset everything.
 
 ### 📖 Browse the Results
+
 1. Matching requests appear as cards, four per page.
 2. Use **Previous**, **Next**, or the numbered buttons to move between pages.
 3. Click **View Details** on a card to see the full request.
 
 ### ➕ Add or Edit a Request
+
 1. Fill in the form in the right sidebar (below the list on smaller screens) and click **Add Event**.
 2. Click **Edit** on a card to load it into the form, then click **Update Event** to save your changes.
 3. Click **Delete** on a card and confirm to remove it.
@@ -66,9 +73,11 @@ Follow the steps below once the app is running.
 ## 🛠 Installation
 
 ### 📋 Prerequisites
+
 - [Node.js](https://nodejs.org/) (current LTS recommended) and npm
 
 ### 🚀 Setup
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/bstearns07/frontend-team-lab-1.git
@@ -96,6 +105,7 @@ Follow the steps below once the app is running.
 ---
 
 ## ✨ Features
+
 - Volunteer request cards showing category, title, location, date, time, description, and status
 - Search across title, organizer, date, category, status, and location
 - Category and status filters with a one-click **Clear Filters** button
@@ -111,16 +121,19 @@ Follow the steps below once the app is running.
 ## 🧰 Tech Stack
 
 ### 🖥 Frontend
+
 - React 19 (function components and Hooks)
 - Plain CSS for layout and styling
 - JavaScript (ES6+)
 
 ### 📦 Data
+
 - Static JSON file (`public/events.json`) loaded with `fetch()`
 
 ---
 
 ## 🔧 Development Tools
+
 - Vite (dev server and build)
 - ESLint with the React Hooks plugin
 - Prettier
@@ -129,6 +142,7 @@ Follow the steps below once the app is running.
 ---
 
 ## 🧩 Core Concepts
+
 - Component composition and props
 - State management with `useState`
 - Side effects, refs, and memoization with `useEffect`, `useRef`, `useMemo`, and `useCallback`
