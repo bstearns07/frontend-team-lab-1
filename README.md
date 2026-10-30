@@ -40,7 +40,7 @@ and page through them with a clean card-based layout.
 
 Built as a team project for the Full Stack Development course at Wayne State College.
 
-For additional project documents, see the [Team Lab document](./docs/ReactCodeTeamLab_Documentation.pdf) and the
+For additional project documents, see the [Team Lab document](./docs/ReactCodeTeamLab_Documentation.pdf)
 
 ---
 
