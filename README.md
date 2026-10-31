@@ -22,6 +22,7 @@
 
 - 📌 [Summary](#-summary)
 - ⭐ [How It Works](#-how-it-works)
+- 🚀 [Live Demo](#-live-demo)
 - 🛠 [Installation](#-installation)
 - ✨ [Features](#-features)
 - 🧰 [Tech Stack](#-tech-stack)
@@ -67,6 +68,14 @@ Follow the steps below once the app is running.
 3. Click **Delete** on a card and confirm to remove it.
 
 > 💡 Changes are held in memory only. Refreshing the page reloads the original data from `events.json`.
+
+---
+
+## 🚀 Live Demo
+
+> ⬇️ **Click the link below to open the app in your browser and try it yourself!**⬇️
+
+👉 [![Open Demo](https://img.shields.io/badge/▶%20Open%20Live%20Demo-ff4b4b?style=for-the-badge)](https://impacthub-52jxwwreb-bstearns07s-projects.vercel.app/)
 
 ---
 
