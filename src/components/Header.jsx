@@ -3,7 +3,7 @@ function Header() {
     <header className="site-header">
       <div className="site-header-content">
         <img
-          src="src/assets/ImpactHubLogo.png"
+          src="./src/assets/ImpactHubLogo.png"
           alt="Impact Hub Logo"
           width="150"
           height="150"
