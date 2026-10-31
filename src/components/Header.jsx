@@ -1,9 +1,11 @@
+import logo from "../assets/ImpactHubLogo.png";
+
 function Header() {
   return (
     <header className="site-header">
       <div className="site-header-content">
         <img
-          src="../assets/ImpactHubLogo.png"
+          src={logo}
           alt="Impact Hub Logo"
           width="150"
           height="150"
