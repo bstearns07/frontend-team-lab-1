@@ -75,7 +75,7 @@ Follow the steps below once the app is running.
 
 > ⬇️ **Click the link below to open the app in your browser and try it yourself!**⬇️
 
-👉 [![Open Demo](https://img.shields.io/badge/▶%20Open%20Live%20Demo-ff4b4b?style=for-the-badge)](https://impacthub-52jxwwreb-bstearns07s-projects.vercel.app/)
+👉 [![Open Demo](https://img.shields.io/badge/▶%20Open%20Live%20Demo-ff4b4b?style=for-the-badge)](https://impacthub-eight.vercel.app/)
 
 ---
 
