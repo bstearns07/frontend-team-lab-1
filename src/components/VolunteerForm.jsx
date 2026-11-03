@@ -91,50 +91,56 @@ function VolunteerForm({
       <h2>{editingEvent ? "Edit Request" : "Add a Volunteer Request"}</h2>
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="form-title">Title</label>
         <input
+          id="form-title"
           name="title"
           value={form.title}
           onChange={handleChange}
           placeholder="Title"
         />
-        <label htmlFor="date">Date</label>
+        <label htmlFor="form-date">Date</label>
         <input
+          id="form-date"
           name="date"
           value={form.date}
           onChange={handleChange}
           placeholder="Date"
         />
-        <label htmlFor="organizer">Organizer</label>
+        <label htmlFor="form-organizer">Organizer</label>
         <input
+          id="form-organizer"
           name="organizer"
           value={form.organizer}
           onChange={handleChange}
           placeholder="Organizer"
         />
-        <label htmlFor="startTime">Start Time</label>
+        <label htmlFor="form-startTime">Start Time</label>
         <input
+          id="form-startTime"
           name="startTime"
           value={form.startTime}
           onChange={handleChange}
           placeholder="Start Time"
         />
-        <label htmlFor="endTime">End Time</label>
+        <label htmlFor="form-endTime">End Time</label>
         <input
+          id="form-endTime"
           name="endTime"
           value={form.endTime}
           onChange={handleChange}
           placeholder="End Time"
         />
-        <label htmlFor="location">Location</label>
+        <label htmlFor="form-location">Location</label>
         <input
+          id="form-location"
           name="location"
           value={form.location}
           onChange={handleChange}
           placeholder="Location"
         />
-        <label htmlFor="category">Category</label>
-        <select name="category" value={form.category} onChange={handleChange}>
+        <label htmlFor="form-category">Category</label>
+        <select id="form-category" name="category" value={form.category} onChange={handleChange}>
           <option value="">Select a category...</option>
           <option value="Community Cleanup">Community Cleanup</option>
           <option value="Food Drive">Food Drive</option>
@@ -143,7 +149,7 @@ function VolunteerForm({
           <option value="Clothing Drive">Clothing Drive</option>
           <option value="Education">Education</option>
         </select>
-        <label htmlFor="description">Description</label>
+        <label htmlFor="form-description">Description</label>
         <textarea
           name="description"
           value={form.description}
